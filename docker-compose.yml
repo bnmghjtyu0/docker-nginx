@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  nextjs:
+    build: ./nextjs-blog/
+    
+  nuxt:
+    build: ./nextjs-blog2/
+
+  # node:
+  #   image: mhart/alpine-node
+  #   command: node ./code/index.js
+  #   ports:
+  #       - "5001:8000" #`custom-server: node-server`
+  #   volumes:
+  #       - .:/code
+
+  nginx:
+    build: ./nginx
+    ports:
+      - 8001:80 #`custom-server: Dockerfile Expose`
